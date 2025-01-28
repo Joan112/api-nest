@@ -105,3 +105,10 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 # para crear modulos
 
 - nest g mo auth
+- nest g module <nombre-módulo>: Genera un nuevo módulo.
+- nest g controller <nombre-controlador>: Genera un nuevo controlador.
+- nest g service <nombre-servicio>: Genera un nuevo servicio.
+- nest g guard <nombre-guard>: Genera un nuevo guard (para autenticación, autorización, etc.).
+- nest g pipe <nombre-pipe>: Genera un nuevo pipe (para transformar datos).
+- nest g filter <nombre-filter>: Genera un nuevo filtro (para manejar excepciones).
+- nest g factory <nombre-factory>: Genera una nueva factory.

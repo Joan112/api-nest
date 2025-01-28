@@ -1,10 +1,15 @@
-import { Controller, Get, Post, Req, Res } from '@nestjs/common';
-import { Request, Response } from 'express';
+import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { ValidateKeysDto } from './dto/validate-keys.dto';
 
-@Controller()
+@Controller('auth')
 export class AuthController {
-  @Get('/')
-  getHello(): string {
-    return 'Hello, this is the auth controller!';
+  constructor(private readonly authService: AuthService) {}
+
+  @Post('provider')
+  async auth(@Body() keys: ValidateKeysDto) {
+    console.log(keys);
+    // Pasa los datos al servicio para validarlos y retornarlos
+    return this.authService.validateKeys(keys);
   }
 }
