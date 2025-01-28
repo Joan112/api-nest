@@ -1,11 +1,12 @@
-import { IsString, IsNotEmpty } from 'class-validator';
+// src/auth/dto/validate-keys.dto.ts
+import { IsString, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class ValidateKeysDto {
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
-  schema!: string;
+  schema: number;
 
   @IsString()
   @IsNotEmpty()
-  schema2!: string;
+  schema2: string;
 }
