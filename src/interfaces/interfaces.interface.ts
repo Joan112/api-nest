@@ -1,5 +1,5 @@
 export interface Response<T> {
-  response: { data: T };
+  data: T;
   success: boolean;
   message: string;
   timestamp: string;

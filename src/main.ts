@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
-// import bodyParser from 'body-parser';
+import { HttpExceptionFilter } from './common/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -13,6 +13,7 @@ async function bootstrap() {
       transform: true, // Transforma los datos a su tipo declarado en el DTO
     }),
   );
+  app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

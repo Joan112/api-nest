@@ -7,7 +7,7 @@ export class DataService {
 
   getData(): Response<string[]> {
     return {
-      response: { data: this.data },
+      data: this.data,
       success: true,
       message: 'Data retrieved successfully',
       timestamp: new Date().toISOString(),
